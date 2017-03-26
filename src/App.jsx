@@ -19,7 +19,8 @@ class App extends Component {
     fetch(FETCH_URL, {
       method: 'GET'
     })
-    .then(response => console.log('response',response));
+    .then(response => response.json())
+    .then(json => console.log('json',json));
   }
   render(){
     return(
@@ -31,7 +32,6 @@ class App extends Component {
               type='text'
               placeholder='search for an artist'
               onChange={event => {this.setState({query: event.target.value})}}
-              onClick={ () => this.search()}
               onKeyPress={event => {
                 if (event.key === 'Enter'){
                   this.search()
