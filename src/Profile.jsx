@@ -3,15 +3,31 @@ import './App.css';
 
 class Profile extends Component {
   render(){
-    let artist = {name: '', followers: {total: ''}, popularity: ''};
-    if (this.props.artist!== null){
-      artist = this.props.artist;
-    }
+    let artist = {name: '', followers: {total: ''}, popularity: '', images: [{url: ''}], genres: []};
+    artist = this.props.artist !== null ? this.props.artist : artist;
     return(
       <div>
-        <div>{artist.name}</div>
-        <div>{artist.followers.total}</div>
-        <div>{artist.popularity}</div>
+        <img
+          alt="Profile"
+          className="profile-img"
+          src={artist.images[0].url}
+        />
+        <div className='profile-info'>
+          <div className='profile-name'>{artist.name}</div>
+          <div className='profile-followers'>{artist.followers.total}</div>
+          <div className='profile-popularity'>{artist.popularity}</div>
+          <div className='profile-genre'>
+            {
+              artist.genres.map((genre,key) => {
+                genre = genre !== artist.genres[artist.genres.length-1] ? ` ${genre},` : ` & ${genre}`
+                return(
+                  <span key={key}>{genre}</span>
+                )
+              })
+            }
+          </div>
+        </div>
+
       </div>
     )
   }
