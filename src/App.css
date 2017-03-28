@@ -11,3 +11,33 @@ body{
 .App-title{
   font-size: 26px;
 }
+
+.profile{
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img{
+  width: 150px;
+  height: 150px;
+  border: 3px solid #fff;
+  border-radius: 75px;
+  object-fit: cover;
+}
+
+.profile-info{
+  margin-left: 10px;
+  text-align: center;
+}
+.profile-name {
+  font-size: 26px;
+}
+
+.profile-followers, .profile-genres, .profile-popularity {
+  font-size: 18px;
+}
+
+.twentyfourkarat {
+    color:#c3a343;
+
+}
