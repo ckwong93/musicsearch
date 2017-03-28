@@ -34,5 +34,10 @@ body{
 }
 
 .profile-followers, .profile-genres, .profile-popularity {
+  font-size: 18px;
+}
+
+.twentyfourkarat {
+    color:#c3a343;
 
 }
